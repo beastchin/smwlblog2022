@@ -1,32 +1,4 @@
-<script>
-    var start = new Date().getTime();
-    function timestamp() {
-        let outcome = Math.round(new Date().getTime() / 1000).toString();
-        return outcome
-    }
-    function timer(intDiff) {
-        myTimer = window.setInterval(function () {
-            var day = 0,
-                hour = 0,
-                minute = 0,
-                second = 0;//时间默认值
-            if (intDiff > 0) {
-                day = Math.floor(intDiff / (60 * 60 * 24));
-                hour = Math.floor(intDiff / (60 * 60)) - (day * 24);
-                minute = Math.floor(intDiff / 60) - (day * 24 * 60) - (hour * 60);
-                second = Math.floor(intDiff) - (day * 24 * 60 * 60) - (hour * 60 * 60) - (minute * 60);
-            }
-            if (hour <= 9) hour = "0" + hour;
-            if (minute <= 9) minute = "0" + minute;
-            if (second <= 9) second = "0" + second;
 
-            $('#day_show').html(day + '天 ' + hour + '时 ' + minute + '分 ' + second + '秒');
-
-            var now = new Date();
-            var year = now.getFullYear();   // 得到年份
-            var month = now.getMonth();     // 得到月份
-            var date = now.getDate();       // 得到日期
-            var day = now.getDay();         // 得到周几
             var hour = now.getHours();      // 得到小时
             var minu = now.getMinutes();    // 得到分钟
             var sec = now.getSeconds();     // 得到秒钟
@@ -49,13 +21,4 @@
         }, 1000);
     }
     var nowtime = timestamp(); // 现行时间戳
-    var mytime = 1663686269; // 设置安装时间（安装日期时间戳）
-    timer(nowtime - mytime); // 启动循环
-
-    // 页面加载完成后执行
-    $(document).ready(function () {
-        // $('.footer-new').hide(); // 隐藏底部
-        $('.footer-new').show(); // 显示底部
-        $('#load_show').html((new Date().getTime() - start) + 'ms');
-    });
-</script>
+  
